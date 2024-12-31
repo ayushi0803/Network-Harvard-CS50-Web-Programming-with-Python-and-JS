@@ -1,0 +1,51 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <div class="container mt-4">
+        <!-- Title Section -->
+        <h1 class="text-center mb-4" style="font-family: 'Poppins', sans-serif; color: #007BFF;">Following</h1>
+
+        <!-- Posts Section -->
+        <div class="all-posts">
+            {% if posts_of_the_page %}
+                {% for post in posts_of_the_page %}
+                    <div class="row post p-3 shadow-sm rounded mb-4 bg-light">
+                        <h5 class="username mb-1">
+                            <a href="{% url 'profile' user_id=post.user.id %}" class="text-primary text-decoration-none">
+                                @{{ post.user }}
+                            </a>
+                        </h5>
+                        <p class="content mb-2" style="font-size: 1.1rem;">{{ post.content }}</p>
+                        <p class="date text-muted mb-0" style="font-size: 0.9rem;">
+                            {{ post.date|date:"d M Y, H:i" }}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-info text-center" role="alert">
+                    No posts to display.
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Pagination Section -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center mt-4">
+                {% if posts_of_the_page.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ posts_of_the_page.previous_page_number }}">
+                            Previous
+                        </a>
+                    </li>
+                {% endif %}
+                {% if posts_of_the_page.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ posts_of_the_page.next_page_number }}">
+                            Next
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+{% endblock %}

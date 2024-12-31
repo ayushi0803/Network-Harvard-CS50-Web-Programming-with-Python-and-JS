@@ -1,0 +1,73 @@
+/* Style for the new post form */
+.new-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Style for the container holding all posts */
+.all-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for individual posts */
+.post {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Content styling */
+.content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Username styling */
+.username {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+/* Date styling */
+.date {
+    font-size: 14px;
+    color: #999;
+    align-self: flex-end;
+    font-style: italic;
+}
